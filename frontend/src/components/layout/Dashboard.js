@@ -26,7 +26,6 @@ export const Dashboard = () => {
 							</p>
                         </div>
                     </header>
-                    <span className="image featured"><img src="images/feature.jpg" alt="" /></span>
                 </section>
                 <section className="box special features">
                     <div className="features-row">
