@@ -1,0 +1,22 @@
+{
+  "name": "john-app-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm run start\" \"cd frontend && npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaBelden/john-app-seed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaBelden/john-app-seed/issues"
+  },
+  "homepage": "https://github.com/JoshuaBelden/john-app-seed#readme",
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
