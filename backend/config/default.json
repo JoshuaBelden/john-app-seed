@@ -1,0 +1,16 @@
+{
+    "environment": "development",
+    "authSecret": "local-development-secret",
+    "mongoEndpointUri": "mongodb://localhost/johnappseed?retry-writes=true",
+    "smtp": {
+        "host": "",
+        "port": 25,
+        "user": "",
+        "password": ""
+    },
+    "site": {
+        "administrator": {
+            "email": ""
+        }
+    }
+}
