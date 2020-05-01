@@ -26,19 +26,4 @@ app.use('/api/profile', require('./routes/api/profile'));
 
 connectDB();
 
-const environment = config.get('environment');
-if (environment == 'production') {
-    app.listen(80, () => console.log(`Server running in ${environment} environment on port 80.`));
-    try {
-        const options = {
-            cert: fs.readFileSync('./sslcert/fullchain.pem'),
-            key: fs.readFileSync('./sslcert/privkey.pem')
-        };
-        https.createServer(options, app).listen(443);
-        console.log('Https listening on port 443.')
-    } catch(err) {
-        console.log('Error launching secure server. Continuing with http.', err.message);
-    }
-} else {
-    app.listen(7000, () => console.log(`Server running in ${environment} environment on port 7000.`));
-}
+app.listen(80, () => console.log(`Server running on port 80.`));

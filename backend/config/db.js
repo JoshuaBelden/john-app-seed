@@ -5,6 +5,8 @@ const uri = config.get('mongoEndpointUri');
 
 const connectDB = async () => {
     try {
+        console.log(`Attempting mongo connection at ${uri}`);
+        
         await mongoose.connect(uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,

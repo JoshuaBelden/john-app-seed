@@ -11,10 +11,6 @@ services:
             - "/etc/certs:/etc/nginx/certs:ro"
             - "nginx-vhost:/etc/nginx/vhost.d"
             - "nginx-html:/usr/share/nginx/html"
-            - ./proxy.nginx.conf:/etc/nginx/conf.d/proxy.nginx.conf:ro 
-        environment:
-            - "ENABLE_IPV6=true"
-            - "SSL_POLICY=Mozilla-Modern"
         labels:
             com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: ""
 
@@ -27,13 +23,10 @@ services:
             - "/etc/certs:/etc/nginx/certs:rw"
             - "nginx-vhost:/etc/nginx/vhost.d"
             - "nginx-html:/usr/share/nginx/html"
-        environment: 
-            - "ACME_CA_URI:https://acme-staging-v02.api.letsencrypt.org/directory"
 
     mongodb:
         image: mongo
         restart: always
-        container_name: pm_mongodb
         volumes:
             - ./data:/data/db
         ports:
@@ -50,15 +43,15 @@ services:
         volumes:
             - ./backend:/api
         environment:
-            - "VIRTUAL_HOST=api.johnappseed.net"
-            - "LETSENCRYPT_HOST=api.johnappseed.net"
+            - "VIRTUAL_HOST=api.johnappseed.com"
+            - "LETSENCRYPT_HOST=api.johnappseed.com"
             - "LETSENCRYPT_EMAIL=johnappseed@joshuabelden.com"
-            - "SSL_POLICY=Mozilla-Modern"
         env_file: variables.env
     
     www:
         build:
             context: ./frontend
+        tty: true
         depends_on:
             - nginx-proxy
             - letsencrypt-companion
@@ -66,10 +59,9 @@ services:
         volumes:
             - ./frontend:/www
         environment:
-            - "VIRTUAL_HOST=johnappseed.net,www.johnappseed.net"
-            - "LETSENCRYPT_HOST=johnappseed.net,www.johnappseed.net"
+            - "VIRTUAL_HOST=johnappseed.com,www.johnappseed.com"
+            - "LETSENCRYPT_HOST=johnappseed.com,www.johnappseed.com"
             - "LETSENCRYPT_EMAIL=johnappseed@joshuabelden.com"
-            - "SSL_POLICY=Mozilla-Modern"
         env_file: variables.env
 
 volumes:
