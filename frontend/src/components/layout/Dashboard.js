@@ -12,7 +12,7 @@ export const Dashboard = () => {
                 <Navbar />
             </header>
             <section id="banner">
-                <h2>John App Seed</h2>
+                <img id="logo" src="images/logo.png" alt="john app seed logo" />
                 <p>A starter template for kickass web apps.</p>
             </section>
 
