@@ -4,12 +4,7 @@ const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const gravatar = require('gravatar');
-const config = require('config');
-
-const authSecret = process.env.AUTH_SECRET || config.get('authSecret');
-if (!authSecret) {
-    throw new Error("Authentication secret was not specified. Specify a secret to use as an environment variable.");
-}
+const authSecret = require('../../config/auth-secret');
 
 const router = express.Router();
 

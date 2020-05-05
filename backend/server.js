@@ -26,4 +26,5 @@ app.use('/api/profile', require('./routes/api/profile'));
 
 connectDB();
 
-app.listen(80, () => console.log(`Server running on port 80.`));
+const port = process.env.NODE_ENV === 'production' ? 80 : 7000;
+app.listen(port, () => console.log(`Server running on port ${port}.`));

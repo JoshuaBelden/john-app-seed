@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const config = require('config');
 
-const uri = config.get('mongoEndpointUri');
+const host = process.env.MONGO_HOST || 'localhost';
+const port = process.env.MONGO_PORT || '27017';
+const uri = `mongodb://${host}:${port}/johnappseed?retry-writes=true`;
 
 const connectDB = async () => {
     try {

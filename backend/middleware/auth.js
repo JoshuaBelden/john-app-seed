@@ -1,12 +1,7 @@
 const jwt = require('jsonwebtoken');
-const config = require('config');
+const authSecret = require('../config/auth-secret');
 
 module.exports = function (req, res, next) {
-
-    const authSecret = process.env.AUTH_SECRET || config.get('authSecret');
-    if (!authSecret) {
-        throw new Error("Authentication secret was not specified. Specify a secret to use as an environment variable.");
-    }
 
     const token = req.header('x-auth-token');
 
