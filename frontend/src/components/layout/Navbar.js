@@ -23,8 +23,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
     const guestLinks = (
         <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mailto:johnappseed@joshuabelden.com">Contact</a></li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/register" className="button">Register</Link></li>
         </ul>

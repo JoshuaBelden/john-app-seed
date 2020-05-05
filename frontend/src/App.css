@@ -119,10 +119,12 @@ a {
 	border-bottom: dotted 1px;
 	color: #e89980;
 	text-decoration: none;
+	font-weight: 500;
 }
 
 a:hover {
 	border-bottom-color: transparent;
+	font-weight: 600;
 }
 
 strong, b {
@@ -1954,6 +1956,50 @@ input[type="radio"]+label:before {
 	box-shadow: 3px 3px 3px #cccc;
 }
 
+.feature-card-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+@media screen and (max-width: 575px) {
+	.feature-card-container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.feature-card-container .feature-card {
+	border: solid 1px rgb(211, 230, 255);
+	border-radius: 5px;
+	margin: 5px;
+	text-align: left;
+	background-color: beige;
+	width: 100%;
+	flex-grow: 1;
+	overflow: hidden;
+	-moz-box-shadow:    1px 1px 0px 0px #c3c3c3;
+	-webkit-box-shadow: 1px 1px 0px 0px #c3c3c3;
+	box-shadow:         5px 5px 0px 0px #fcfcfc;
+}
+
+.feature-card-container .feature-card .feature-card-header {
+	padding: 4px;
+	background-image: url('images/header.jpg');
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.feature-card-container .feature-card .feature-card-header i {
+	padding: 5px;
+}
+
+.feature-card-container .feature-card .feature-card-content {
+	height: 256px;
+	background-color: #fff;
+	padding: 4px;
+}
+
 .box.special {
 	text-align: center;
 }
@@ -2490,16 +2536,17 @@ body.landing #page-wrapper {
 }
 
 #header {
-	background: #444;
+	background-image: url(images/header.jpg);
 	color: #bbb;
 	cursor: default;
 	height: 3.25em;
+	padding: 4px;
 	left: 0;
 	line-height: 3.25em;
-	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 10000;
+	margin-bottom: 8px;
 }
 
 #header h1 {
@@ -2643,6 +2690,10 @@ body.landing #page-wrapper {
 	font-size: 1.0em;
 	font-weight: 500;
 	margin: 5px;
+	border-radius: 5px;
+	border: dotted 1px;
+	background-color: #fff8dc;
+	padding: 5px;
 }
 
 .dropotron {
@@ -2802,7 +2853,7 @@ body.landing #main {
 
 #footer {
 	background: #f0f0f0;
-	padding: 4em 0 6em 0;
+	padding: 2em 0 3em 0;
 	text-align: center;
 }
 
@@ -2957,11 +3008,11 @@ body.landing #main {
 		font-size: 11pt;
 	}
 	h2 br, h3 br, h4 br, h5 br, h6 br {
-		display: none;
+		/* display: none; */
 	}
 	/* Section/Article */
 	header br {
-		display: none;
+		/* display: none; */
 	}
 	header.major {
 		padding: 0 4em;
@@ -2990,7 +3041,7 @@ body.landing #main {
 		padding-top: 0;
 	}
 	#header {
-		display: none;
+		/* display: none; */
 	}
 	/* Banner */
 	/* Nav */
@@ -3118,6 +3169,9 @@ body.landing #main {
 	#navPanel .link .indent-5 {
 		display: inline-block;
 		width: 5em;
+	}
+	#contribution {
+		display: none;
 	}
 	body.navPanel-visible #page-wrapper {
 		-moz-transform: translateX(275px);

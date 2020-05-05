@@ -4,8 +4,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 import { Dashboard } from './components/layout/Dashboard';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
+import { Page } from './components/layout/Page';
 import Alert from './components/layout/Alert';
 
 import store from './store';
@@ -33,16 +32,11 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<Router>
-				<div className="page-wrapper">
-					<Alert />
+				<Alert />
+				<Switch>
 					<Route exact path="/" component={Dashboard} />
-					<section className="container">
-						<Switch>
-							<Route exact path="/register" component={Register} />
-							<Route exact path="/login" component={Login} />
-						</Switch>
-					</section>
-				</div>
+					<Route path="/" component={Page} />
+				</Switch>
 			</Router>
 		</Provider>
 	);
