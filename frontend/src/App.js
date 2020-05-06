@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import { Dashboard } from './components/layout/Dashboard';
 import { Page } from './components/layout/Page';
-import Alert from './components/layout/Alert';
+import AlertList from './components/layout/Alert';
 
 import store from './store';
 import { loadUser } from './actions/auth';
@@ -32,7 +32,7 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<Router>
-				<Alert />
+				<AlertList />
 				<Switch>
 					<Route exact path="/" component={Dashboard} />
 					<Route path="/" component={Page} />
