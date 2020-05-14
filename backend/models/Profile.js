@@ -5,29 +5,41 @@ const ProfileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
+    biography: {
+        type: String
+    },
+    birthday: {
+        type: Date
+    },
+    company: {
+        type: String
+    },
+    github: {
+        type: String
+    },
     location: {
         type: String
     },
-    bio: {
+    profileimage: {
         type: String
     },
-    githubusername: {
+    website: {
         type: String
     },
     social: {
+        facebook: {
+            type: String
+        },
         youtube: {
             type: String
         },
-        twitter: {
-            type: String
-        },
-        facebook: {
+        instagram: {
             type: String
         },
         linkedin: {
             type: String
         },
-        instagram: {
+        twitter: {
             type: String
         },
     }

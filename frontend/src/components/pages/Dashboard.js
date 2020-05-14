@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import Navbar from './Navbar';
-import { Footer } from './Footer';
-import { Subscribe } from './Subscribe';
+import Navbar from '../layout/Navbar';
+import { Footer } from '../layout/Footer';
+import { Subscribe } from '../layout/Subscribe';
 
 export const Dashboard = () => {
     return (

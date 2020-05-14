@@ -1,13 +1,17 @@
 {
-    "name": "Joshua C. Belden",
-    "email": "johnappseed@joshuabelden.com",
-    "password": "Password01!",
-    "location": "Medford, Oregon",
-    "bio": "Doin this a long time.",
-    "githubusername": "JoshuaBelden",
-    "youtube": "youtube.com/JoshuaBelden",
+    "biography": "Doin this a long time.",
+    "birthday": "08/04/1974",
+    "company": "Belden inc.",
+    "email": "me@joshuabelden.com",
     "facebook": "facebook.com/JoshuaBelden",
-    "twitter": "twitter.com/JoshuaBelden",
+    "github": "JoshuaBelden",
     "instagram": "instagram.com/JoshuaBelden",
-    "linkedin": "youtube.com/JoshuaBelden"
+    "linkedin": "youtube.com/JoshuaBelden",
+    "location": "Medford, Oregon",
+    "name": "Joshua C. Belden",
+    "password": "Password01!",
+    "profileimage": "profile.jpg",
+    "twitter": "twitter.com/JoshuaBelden",
+    "website": "https://www.johnappseed",
+    "youtube": "youtube.com/JoshuaBelden"
 }

@@ -1,16 +1,16 @@
-import { SET_ALERT, DISMISS_ALERT } from './types';
+import { ALERT_CREATED, ALERT_DELETED } from './types';
 import { v4 as uuid } from 'uuid';
 
-export const setAlert = (msg, alertType, timeout = 3000) => dispatch => {
+export const createAlert = (message, alertType, timeout = 3000) => dispatch => {
     const id = uuid();
     dispatch({
-        type: SET_ALERT,
-        payload: { msg, alertType, id }
+        type: ALERT_CREATED,
+        payload: { message, alertType, id }
     });
 
-    setTimeout(() => dispatch({ type: DISMISS_ALERT, payload: id }), timeout);
+    setTimeout(() => dispatch({ type: ALERT_DELETED, payload: id }), timeout);
 };
 
-export const dismissAlert = (alert) => dispatch => {
-    dispatch({ type: DISMISS_ALERT, payload: alert.id })
+export const deleteAlert = (alert) => dispatch => {
+    dispatch({ type: ALERT_DELETED, payload: alert.id })
 }

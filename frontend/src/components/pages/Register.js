@@ -3,10 +3,10 @@ import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
-import { setAlert } from '../../actions/alert';
-import { register } from '../../actions/auth';
+import { createAlert } from '../../actions/alert';
+import { createRegistration } from '../../actions/auth';
 
-const Register = ({ setAlert, register, isAuthenticated }) => {
+const Register = ({ createAlert, createRegistration, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -23,9 +23,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         if (password !== passwordMatch) {
-            setAlert('Passwords do not match.', 'danger', 1000);
+            createAlert('Passwords do not match.', 'danger', 1000);
         } else {
-            register({ name, email, password });
+            createRegistration({ name, email, password });
         }
     };
 
@@ -72,8 +72,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 };
 
 Register.propTypes = {
-    setAlert: PropTypes.func.isRequired,
-    register: PropTypes.func.isRequired,
+    createAlert: PropTypes.func.isRequired,
+    createRegistration: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
 };
 
@@ -81,4 +81,4 @@ const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 })
 
-export default connect(mapStateToProps, { setAlert, register })(Register);
+export default connect(mapStateToProps, { createAlert, createRegistration })(Register);

@@ -20,7 +20,7 @@ router.get('/me', auth, async (req, res) => {
             .populate('user', ['name', 'avatar']);
 
         if (!profile) {
-            return res.status(400).json({ msg: 'There is no profile for this user' });
+            return res.status(404).json({ message: 'There is no profile for this user' });
         }
 
         res.json(profile);
@@ -35,31 +35,37 @@ router.get('/me', auth, async (req, res) => {
 // @access  Private
 router.post('/', auth, async (req, res) => {
     const {
-        location,
-        bio,
-        githubusername,
-        youtube,
+        biography,
+        birthday,
+        company,
         facebook,
-        twitter,
+        github,
         instagram,
-        linkedin
+        linkedin,
+        location,
+        profileimage,
+        twitter,
+        website,
+        youtube,
     } = req.body;
 
     const profileFields = {};
 
     profileFields.user = req.user.id;
-
-    if (location) profileFields.location = location;
-    if (bio) profileFields.bio = bio;
-    if (githubusername) profileFields.githubusername = githubusername;
-
     profileFields.social = {};
 
-    if (youtube) profileFields.social.youtube = youtube;
+    if (biography) profileFields.biography = biography;
+    if (birthday) profileFields.birthday = birthday;
+    if (company) profileFields.company = company;
+    if (github) profileFields.github = github;
+    if (location) profileFields.location = location;
+    if (profileimage) profileFields.profileimage = profileimage;
+    if (website) profileFields.website = website;
     if (facebook) profileFields.social.facebook = facebook;
-    if (twitter) profileFields.social.twitter = twitter;
     if (instagram) profileFields.social.instagram = instagram;
     if (linkedin) profileFields.social.linkedin = linkedin;
+    if (twitter) profileFields.social.twitter = twitter;
+    if (youtube) profileFields.social.youtube = youtube;
 
     try {
         let profile = await Profile.findOne({ user: req.user.id });
@@ -102,13 +108,13 @@ router.get('/user/:user_id', async (req, res) => {
     try {
         const profile = await Profile.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar']);
         if (!profile) {
-            return res.status(400).json({ msg: 'Profile not found' });
+            return res.status(400).json({ message: 'Profile not found' });
         }
         res.json(profile);
     } catch (err) {
         console.error(err.message);
         if (err.kind == 'ObjectId') {
-            return res.status(400).json({ msg: 'Profile not found' });
+            return res.status(400).json({ message: 'Profile not found' });
         }
         res.status(500).send('Server error');
     }
@@ -122,7 +128,7 @@ router.delete('/', auth, async (req, res) => {
         await Profile.findOneAndRemove({ user: req.user.id });
         await User.findOneAndRemove({ _id: req.user.id });
 
-        res.json({ msg: 'User deleted' });
+        res.json({ message: 'User deleted' });
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');

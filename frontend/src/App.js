@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import React, { useEffect } from 'react';
 import axios from 'axios';
+import React, { useEffect } from 'react';
 
-import { Dashboard } from './components/layout/Dashboard';
-import { Page } from './components/layout/Page';
-import AlertList from './components/layout/Alert';
-
-import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
+import store from './store';
+
+import { Dashboard } from './components/pages/Dashboard';
+import { Page } from './components/pages/Page';
+import AlertList from './components/layout/Alert';
 
 import './App.css';
 

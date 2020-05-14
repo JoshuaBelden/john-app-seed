@@ -1,11 +1,11 @@
 import {
-    REGISTER_SUCCESS,
-    REGISTER_FAIL,
+    REGISTRATION_CREATED,
+    REGISTRATION_FAILED,
     USER_LOADED,
-    AUTH_FAIL,
-    LOGIN_SUCCESS,
-    LOGIN_FAIL,
-    LOGOUT,
+    AUTHORIZATION_FAILED,
+    LOGIN_SUCCEDED,
+    LOGIN_FAILED,
+    LOGOUT_SUCCEDED,
 } from '../actions/types';
 
 const initialState = {
@@ -25,8 +25,8 @@ export default function (state = initialState, action) {
                 loading: false,
                 user: payload
             };
-        case REGISTER_SUCCESS:
-        case LOGIN_SUCCESS:
+        case REGISTRATION_CREATED:
+        case LOGIN_SUCCEDED:
             localStorage.setItem('token', payload.token);
             return {
                 ...state,
@@ -35,10 +35,10 @@ export default function (state = initialState, action) {
                 loading: false
             };
 
-        case REGISTER_FAIL:
-        case LOGIN_FAIL:
-        case AUTH_FAIL:
-        case LOGOUT:
+        case REGISTRATION_FAILED:
+        case LOGIN_FAILED:
+        case AUTHORIZATION_FAILED:
+        case LOGOUT_SUCCEDED:
             localStorage.removeItem('token');
             return {
                 ...state,

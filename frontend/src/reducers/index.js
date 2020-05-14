@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import alert from './alert';
-import auth from './auth';
+import alertData from './alert';
+import authData from './auth';
+import profileData from './profile';
 
 export default combineReducers({
-    alert,
-    auth
+    alertData,
+    authData,
+    profileData
 });

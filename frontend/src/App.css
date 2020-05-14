@@ -136,10 +136,6 @@ em, i {
 	font-style: italic;
 }
 
-p {
-	margin: 0 0 2em 0;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	color: #646464;
 	font-weight: 300;
@@ -1715,10 +1711,14 @@ label {
 	display: block;
 	font-size: 0.9em;
 	font-weight: 300;
-	margin: 0 0 1em 0;
+	margin: 0.5em 0.2em 0.5em 0em;
 }
 
 input {
+	margin: 0.5em;
+}
+
+textarea {
 	margin: 0.5em;
 }
 
@@ -2575,6 +2575,11 @@ body.landing #page-wrapper {
 	vertical-align: middle;
 }
 
+#header a {
+	text-decoration: none;
+	border: none;
+}
+
 #header nav>ul {
 	list-style: none;
 	margin: 0;
@@ -3392,7 +3397,7 @@ body.landing #main {
 	font-size: 1.25em;
 	font-weight: 400;
 	padding: 0.8rem;
-	opacity: 0.9;
+	opacity: 0.95;
 	background: var(--danger-color);
 	color: #333;
 	border-radius: 5px;
@@ -3429,4 +3434,35 @@ body.landing #main {
 	background: #fff;
 	color: #333;
 	border: #ccc solid 1px;
+}
+
+.spinner-container {
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.spinner-container img {
+	width: 64px;
+	height: 64px;
+}
+
+.profile label {
+	display: inline;
+}
+
+.profile .biography {
+	margin: 1em 0 2em 0;
+}
+
+.social-links {
+	margin: 1em 0 2em 0;
+}
+
+.social-links a {
+	margin: 0.5em;
 }
