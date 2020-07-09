@@ -39,7 +39,7 @@ export const Profile = ({
                         <article className="profile">
                             { myProfile.website ? (
                                 <div>
-                                    <a href={ myProfile.website } target="_blank">{ myProfile.website }</a>
+                                    <a href={ myProfile.website } target="_blank" rel="noopener noreferrer">{ myProfile.website }</a>
                                 </div>
                                 ) : <Fragment />
                             }
@@ -75,7 +75,7 @@ export const Profile = ({
                             <div className="social-links">
                                 { myProfile.social && myProfile.social.twitter ? (
                                     <span>
-                                        <a href={myProfile.social.twitter} target="_blank">
+                                        <a href={myProfile.social.twitter} target="_blank" rel="noopener noreferrer">
                                             <i className="fab fa-twitter fa-2x"></i>
                                         </a>
                                     </span>
@@ -83,7 +83,7 @@ export const Profile = ({
                                 }
                                 { myProfile.social && myProfile.social.facebook ? (
                                     <span>
-                                        <a href={myProfile.social.facebook} target="_blank">
+                                        <a href={myProfile.social.facebook} target="_blank" rel="noopener noreferrer">
                                             <i className="fab fa-facebook fa-2x"></i>
                                         </a>
                                     </span>
@@ -91,7 +91,7 @@ export const Profile = ({
                                 }
                                 { myProfile.social && myProfile.social.youtube ? (
                                     <span>
-                                        <a href={myProfile.social.youtube} target="_blank">
+                                        <a href={myProfile.social.youtube} target="_blank" rel="noopener noreferrer">
                                             <i className="fab fa-youtube fa-2x"></i>
                                         </a>
                                     </span>
@@ -99,7 +99,7 @@ export const Profile = ({
                                 }
                                 { myProfile.social && myProfile.social.linkedin ? (
                                     <span>
-                                        <a href={myProfile.social.linkedin} target="_blank">
+                                        <a href={myProfile.social.linkedin} target="_blank" rel="noopener noreferrer">
                                             <i className="fab fa-linkedin fa-2x"></i>
                                         </a>
                                     </span>
@@ -107,7 +107,7 @@ export const Profile = ({
                                 }
                                 { myProfile.social && myProfile.social.instagram ? (
                                     <span>
-                                        <a href={myProfile.social.instagram} target="_blank">
+                                        <a href={myProfile.social.instagram} target="_blank" rel="noopener noreferrer">
                                             <i className="fab fa-instagram fa-2x"></i>
                                         </a>
                                     </span>
